@@ -19,8 +19,20 @@ class Presupuesto {
 }
 
 class UI {
+    insertarPresupuesto(cantidad) {
+        // Extrayendo los valores
+        const { presupuesto, restante } = cantidad;
 
+        //Agregar al HTML
+        document.querySelector('#total').textContent = presupuesto;
+        document.querySelector('#restante').textContent = restante;
+
+    }
 }
+
+// Instanciar
+
+const ui = new UI();
 
 let presupuesto;
 
@@ -39,4 +51,5 @@ function preguntarPresupuesto() {
     presupuesto = new Presupuesto(presupuestoUsuario);
     console.log(presupuesto);
 
+    ui.insertarPresupuesto( presupuesto );
 }
